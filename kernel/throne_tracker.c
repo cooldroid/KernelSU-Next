@@ -212,7 +212,7 @@ FILLDIR_RETURN_TYPE my_actor(struct dir_context *ctx, const char *name,
 				}
 			}
 
-			bool is_manager = is_manager_apk(dirpath);
+			bool is_manager = ksu_is_manager_apk(dirpath);
 			pr_info("Found new base.apk at path: %s, is_manager: %d\n",
 				dirpath, is_manager);
 			if (is_manager) {
@@ -428,7 +428,7 @@ static int throne_tracker_thread(void *data)
 	return 0;
 }
 
-void track_throne()
+void ksu_track_throne()
 {
 	throne_thread = kthread_run(throne_tracker_thread, NULL, "throne_tracker");
 	if (IS_ERR(throne_thread)) {
