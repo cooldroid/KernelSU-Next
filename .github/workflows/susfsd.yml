@@ -1,10 +1,10 @@
 name: Build susfsd aarch64
 on:
-  push:
-    branches: [ "next" ]
-    paths:
-      - '.github/workflows/susfsd.yml'
-      - 'userspace/susfsd/**'
+  # push:
+  #   branches: [ "next" ]
+  #   paths:
+  #     - '.github/workflows/susfsd.yml'
+  #     - 'userspace/susfsd/**'
   workflow_dispatch:
   workflow_call:
     inputs:

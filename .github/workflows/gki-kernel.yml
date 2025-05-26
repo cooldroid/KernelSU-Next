@@ -120,6 +120,8 @@ jobs:
           PATCH_PATH: ${{ inputs.patch_path }}
           IS_DEBUG_KERNEL: ${{ inputs.debug }}
         run: |
+          cd $GITHUB_WORKSPACE/KernelSU-Next
+          git checkout next-origin
           cd $GITHUB_WORKSPACE/android-kernel
           echo "[+] KernelSU-Next setup"
           GKI_ROOT=$(pwd)
